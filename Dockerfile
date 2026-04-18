@@ -1,4 +1,5 @@
 FROM rocm/pytorch:rocm7.2.2_ubuntu24.04_py3.12_pytorch_release_2.10.0
+WORKDIR /app/ComfyUI
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
@@ -16,7 +17,6 @@ RUN apt-get update && apt-get install -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/Comfy-Org/ComfyUI
-WORKDIR /app/ComfyUI
 RUN pip install --no-cache-dir --ignore-installed torch torchvision torchaudio && \
     pip install --no-cache-dir -r requirements.txt
 EXPOSE 8188
