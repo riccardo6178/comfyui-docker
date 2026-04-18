@@ -6,11 +6,11 @@ services:
     ports:
       - "8188:8188"
     volumes:
-      - ./storage/models:/app/ComfyUI/models
-      - ./storage/comfy-input:/app/ComfyUI/input
-      - ./storage/comfy-output:/app/ComfyUI/output
-      - ./storage/comfy-custom_nodes:/app/ComfyUI/custom_nodes
-      - ./storage/comfy-user:/app/ComfyUI/user
+      - ./storage/models:/ComfyUI/models
+      - ./storage/comfy-input:/ComfyUI/input
+      - ./storage/comfy-output:/ComfyUI/output
+      - ./storage/comfy-custom_nodes:/ComfyUI/custom_nodes
+      - ./storage/comfy-user:/ComfyUI/user
     deploy:
       resources:
         limits:
